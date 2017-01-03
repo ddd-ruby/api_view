@@ -42,8 +42,8 @@ class EventFactory
   def self.away_team
     Team.new(
       abbreviation: 'MIA',
-      full_name: Faker::Name.name,
-      location: Faker::AddressUS.state,
+      full_name: FFaker::Name.name,
+      location: FFaker::AddressUS.state,
       meidum_name: 'Miami',
       short_name: 'Heats'
     )
@@ -52,9 +52,9 @@ class EventFactory
   def self.home_team
     Team.new(
       abbreviation: 'TOR',
-      full_name: Faker::Name.name,
-      location: Faker::AddressUS.state,
-      medium_name: Faker::AddressUS.state,
+      full_name: FFaker::Name.name,
+      location: FFaker::AddressUS.state,
+      medium_name: FFaker::AddressUS.state,
       short_name: 'Raptors'
     )
   end
