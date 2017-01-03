@@ -11,6 +11,8 @@ module SerializationBenchmark
   event_collection = collection_size.times.map { event }
   team_collection  = collection_size.times.map { EventFactory.home_team }
 
+  puts "for Ruby " + `ruby -v`.strip
+
   puts "\nObject tests:\n"
   Bixby::Bench.run(10_000) do |b|
     b.sample('ApiView Ultra Simple') do
