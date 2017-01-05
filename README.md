@@ -1,7 +1,10 @@
 # ApiView
 
-[![Build Status](https://travis-ci.org/mindreframer/api_view.svg?branch=master)](http://travis-ci.org/mindreframer/api_view)
-[![codecov.io](https://codecov.io/github/mindreframer/api_view/coverage.svg?branch=master)](https://codecov.io/github/mindreframer/api_view?branch=master)
+[![Build Status](https://travis-ci.org/ddd-ruby/api_view.png)](https://travis-ci.org/ddd-ruby/api_view)
+[![Code Climate](https://codeclimate.com/github/ddd-ruby/api_view/badges/gpa.svg)](https://codeclimate.com/github/ddd-ruby/api_view)
+[![codecov](https://codecov.io/gh/ddd-ruby/api_view/branch/master/graph/badge.svg)](https://codecov.io/gh/ddd-ruby/api_view)
+[![Dependency Status](https://gemnasium.com/ddd-ruby/api_view.png)](https://gemnasium.com/ddd-ruby/api_view)
+
 
 Object serializer with
   - small codebase
