@@ -49,51 +49,50 @@ ApiView gives you all that and stays very small doing that.
     -> `field` - a setter method, that also accepts `via: SomeSerializerApiView`
 
 
-        class EventApiView < EventSummaryApiView
-          # default serializer for BoxScore, will be picked, if none other was given
-          for_model ::Event
+```ruby
+class EventApiView < EventSummaryApiView
+  # default serializer for BoxScore, will be picked, if none other was given
+  for_model ::Event
 
-          # the attributes to copy from the object
-          attributes :share_url, :sport_name
+  # the attributes to copy from the object
+  attributes :share_url, :sport_name
 
-          # the name of your main object, optional
-          main_object :event
+  # the name of your main object, optional
+  main_object :event
 
-          # the method to add additional logic + fields
-          def instance_convert
-            # just a setter method with optional serializer for that sub-object
-            field :box_score, event.box_score, via: BasketballBoxScoreApiView
-          end
-        end
+  # the method to add additional logic + fields
+  def instance_convert
+    # just a setter method with optional serializer for that sub-object
+    field :box_score, event.box_score, via: BasketballBoxScoreApiView
+  end
+end
 
+## a more complete example
+class Event
+  attr_accessor :game_date, :game_type, :status
+end
 
+class EventSerializer < ::ApiView::Base
+  attributes :game_date, :game_type, :status
+  main_object :event
+  for_model ::Event
 
+  # this is your chance to do extra work
+  def instance_convert
+    field :away_team,  "any value here"
+  end
+end
 
-        ## a more complete example
-        class Event
-          attr_accessor :game_date, :game_type, :status
-        end
+e = Event.new; e.game_date = Time.now; e.game_type = 'baseball'; e.status = 'won'
+EventSerializer.render(e)
 
-        class EventSerializer < ::ApiView::Base
-          attributes :game_date, :game_type, :status
-          main_object :event
-          for_model ::Event
-
-          # this is your chance to do extra work
-          def instance_convert
-            field :away_team,  "any value here"
-          end
-        end
-
-        e = Event.new; e.game_date = Time.now; e.game_type = 'baseball'; e.status = 'won'
-        EventSerializer.render(e)
-
-        # because we configured the mapping from serializer to a Ruby class, this also works:
-        ApiView::Engine.render(e)
-
+# because we configured the mapping from serializer to a Ruby class, this also works:
+ApiView::Engine.render(e)
+```
 
 
-  For more examples take a look into the `example/`-folder and run the benchmark script via `ruby example/benchmark.rb`.
+
+For more examples take a look into the `example/`-folder and run the benchmark script via `ruby example/benchmark.rb`.
 
 
 
