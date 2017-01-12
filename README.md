@@ -1,6 +1,7 @@
 # ApiView
 
 [![Build Status](https://travis-ci.org/ddd-ruby/api_view.png)](https://travis-ci.org/ddd-ruby/api_view)
+[![Gem Version](https://badge.fury.io/rb/api_view.png)](http://badge.fury.io/rb/api_view)
 [![Code Climate](https://codeclimate.com/github/ddd-ruby/api_view/badges/gpa.svg)](https://codeclimate.com/github/ddd-ruby/api_view)
 [![codecov](https://codecov.io/gh/ddd-ruby/api_view/branch/master/graph/badge.svg)](https://codecov.io/gh/ddd-ruby/api_view)
 [![Dependency Status](https://gemnasium.com/ddd-ruby/api_view.png)](https://gemnasium.com/ddd-ruby/api_view)
