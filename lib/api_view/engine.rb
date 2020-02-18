@@ -1,10 +1,11 @@
+require "date"
 
 module ApiView
   class Engine
 
     # Classes which require no further conversion
     BASIC_TYPES = [
-      String, Integer, Fixnum, Bignum, Float,
+      String, Integer, Bignum, Float,
       TrueClass, FalseClass,
       Time, Date, DateTime
     ]

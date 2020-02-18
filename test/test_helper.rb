@@ -14,9 +14,10 @@ if ENV['CI']=='true'
 end
 
 Bundler.setup(:default, :development)
-require 'minitest'
-require 'mocha/mini_test'
 require "minitest/autorun"
+
+gem 'mocha'
+require 'mocha/minitest'
 
 require 'minitest/reporters'
 reporter_options = { color: true, slow_count: 10 }
